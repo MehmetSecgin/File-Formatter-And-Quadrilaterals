@@ -11,7 +11,6 @@ class Point {
         return "(" + x + "," + y + ")";
     }
 }
-
 class Quadrilateral {
     Point s1;
     Point s2;
@@ -23,7 +22,6 @@ class Quadrilateral {
         this.s2 = s2;
         this.s3 = s3;
         this.s4 = s4;
-
     }
 
     @Override
@@ -56,12 +54,11 @@ class Trapezoid extends Quadrilateral {
 
     @Override
     public String toString() {
-        return  "\nCoordinates of Trapezoid are:\n" + super.toString() +
-                "Trapezoid{" +
-                "basis1=" + basis1 +
-                ", basis2=" + basis2 +
-                ", height=" + height +
-                '}';
+        return  "Trapezoid " +
+                "Basis1 = " + basis1 +
+                ", Basis2 = " + basis2 +
+                ", Height = " + height +
+                ", Area = " + area();
     }
 }
 
@@ -82,11 +79,10 @@ class Parallelogram extends Trapezoid {
 
     @Override
     public String toString() {
-        return  super.toString().toString() +
-                "width=" + width +
-                ", height=" + height +
-                ", area = " + area()+
-                '}';
+        return  "Paralellgoram " +
+                "width = " + width +
+                ", height = " + height +
+                ", area = " + area();
     }
 }
 
@@ -95,8 +91,8 @@ class Rectangle extends Parallelogram {
 
     public Rectangle(Point s1, Point s2, Point s3, Point s4) {
         super(s1, s2, s3, s4);
-        width = Math.sqrt((Math.pow((s2.x - s1.x), 2) + Math.pow(s2.y - s1.y, 2)));
-        height = Math.sqrt((Math.pow(s4.x - s1.x, 2)) + Math.pow(s4.y - s1.y, 2));
+        width = Math.abs(s4.x-s1.x);
+        height = Math.abs(s1.y-s2.y);
     }
 
     public double area() {
@@ -105,7 +101,10 @@ class Rectangle extends Parallelogram {
 
     @Override
     public String toString() {
-        return "" +area();
+        return  "Rectangle " +
+                "width = " + width +
+                ", height = " + height +
+                ", area = " + area();
     }
 }
 
@@ -114,12 +113,18 @@ class Square extends Rectangle {
 
     public Square(Point s1, Point s2, Point s3, Point s4) {
         super(s1, s2, s3, s4);
-        side = Math.sqrt(Math.pow((s2.x - s1.x), 2) + Math.pow(s2.y - s1.y, 2));
         side = s3.x - s1.x;
     }
 
     public double area() {
         return side * side;
+    }
+
+    @Override
+    public String toString() {
+        return  "Square" +
+                " Side width = " + side+
+                " Area = " + area();
     }
 }
 
@@ -128,19 +133,22 @@ public class Main {
         Quadrilateral[] quad = {
                 new Trapezoid(
                         new Point(0, 0),
-                        new Point(0.5, 1),
-                        new Point(1.5, 1),
-                        new Point(2, 0)),
+                        new Point(1, 1),
+                        new Point(3, 1),
+                        new Point(4, 0)),
+
                 new Parallelogram(
                         new Point(0, 0),
                         new Point(1, 1),
                         new Point(3, 1),
                         new Point(2, 0)),
+
                 new Rectangle(
                         new Point(0, 0),
                         new Point(0, 1),
-                        new Point(2, 2),
+                        new Point(2, 1),
                         new Point(2, 0)),
+
                 new Square(
                         new Point(0, 0),
                         new Point(0, 1),
