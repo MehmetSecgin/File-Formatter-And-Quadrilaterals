@@ -1,0 +1,10 @@
+1 Rayetsu Tuncer 5 5052615688 mehmetascgn@gmail.com
+2 Mehmet Seçgin 10 5052615688 mehmetascgn@gmail.com
+3 Rayetsu Tuncer 5 5052615688 mehmetascgn@gmail.com
+4 Mehmet Seçgin 10 5052615688 mehmetascgn@gmail.com
+5 Rayetsu Tuncer 5 5052615688 mehmetascgn@gmail.com
+6 Mehmet Seçgin 10 5052615688 mehmetascgn@gmail.com
+7 Rayetsu Tuncer 5 5052615688 mehmetascgn@gmail.com
+8 Mehmet Seçgin 10 5052615688 mehmetascgn@gmail.com
+9 Rayetsu Tuncer 5 5052615688 mehmetascgn@gmail.com
+10 Mehmet Seçgin 10 5052615688 mehmetascgn@gmail.com
