@@ -128,7 +128,7 @@ class Square extends Rectangle {
     }
 }
 
-public class Main {
+public class Quadrilaterals {
     public static void main(String[] args) {
         Quadrilateral[] quad = {
                 new Trapezoid(
