@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public classs ReadAndChange {
+public class ReadAndChange {
     private static Scanner inputOriginal, inputChanged, inputDeneme;
 
     public static void main(String[] args) throws IOException {
