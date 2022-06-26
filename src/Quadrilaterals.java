@@ -26,11 +26,20 @@ class Quadrilateral {
 
     @Override
     public String toString() {
-        return s1 + "," + s2 + "," + s3 + "," + s4;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Quadrilateral ");
+        sb.append(" (x1, y1) = ").append(s1);
+        sb.append(" (x2, y2) = ").append(s2);
+        sb.append(" (x3, y3) = ").append(s3);
+        sb.append(" (x4, y4) = ").append(s4);
+        sb.append(" Area = ").append(area());
+        return sb.toString();
     }
 
     public double area() {
-        return 0;
+        double firstDiagonal = (s1.x * s2.y) + (s2.x * s3.y) + (s3.x * s4.y) + (s4.x * s1.y);
+        double reverseDiagonal = (s2.x * s1.y) + (s3.x * s2.y) + (s4.x * s3.y) + (s1.x * s4.y);
+        return 0.5 * Math.abs(firstDiagonal - reverseDiagonal);
     }
 }
 
@@ -153,11 +162,30 @@ public class Quadrilaterals {
                         new Point(0, 0),
                         new Point(0, 1),
                         new Point(1, 2),
-                        new Point(1, 0))
+                        new Point(1, 0)),
+
+                new Quadrilateral(
+                        new Point(0, 0),
+                        new Point(0, 1),
+                        new Point(2, 1),
+                        new Point(2, 0)),
         };
         for (Quadrilateral quadrilateral : quad) {
 
             System.out.println(quadrilateral);
         }
+
+        Quadrilateral rect = new Quadrilateral(
+                new Point(0, 0),
+                new Point(0, 1),
+                new Point(2, 1),
+                new Point(2, 0)
+        );
+
+        Rectangle irect = new Rectangle(new Point(0, 0),
+                new Point(0, 1),
+                new Point(2, 1),
+                new Point(2, 0));
+        assert rect.area() == irect.area();
     }
 }
